@@ -1,0 +1,294 @@
+:root{
+    --color-principal:#2563eb;
+    --color-secundario:#0f172a;
+    --color-exito:#16a34a;
+    --color-fondo:#f8fafc;
+    --color-texto:white;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background-image:url("fondo.jpg");
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+    color:white;
+}
+
+/* HEADER */
+
+header{
+    background:rgba(37,99,235,0.85);
+    padding:30px;
+    text-align:center;
+}
+
+header h1{
+    font-size:40px;
+    margin-bottom:10px;
+}
+
+/* MENU */
+
+nav{
+    background:rgba(15,23,42,0.95);
+    padding:15px;
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+nav ul{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    list-style:none;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#facc15;
+}
+
+/* CONTENIDO */
+
+main{
+    background:rgba(255,255,255,.15);
+    backdrop-filter:blur(8px);
+    margin:20px;
+    padding:25px;
+    border-radius:20px;
+}
+
+section{
+    margin-bottom:50px;
+    text-align:center;
+}
+
+h2{
+    margin-bottom:20px;
+    font-size:32px;
+}
+
+/* BOTONES */
+
+button{
+    background:var(--color-principal);
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:10px;
+    cursor:pointer;
+    margin:5px;
+    font-size:15px;
+}
+
+button:hover{
+    background:#1d4ed8;
+    transform:scale(1.05);
+    transition:.3s;
+}
+
+/* REGIONES */
+
+.dashboard{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+    margin-top:20px;
+}
+
+.card{
+    min-height:320px;
+    padding:20px;
+    border-radius:20px;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    cursor:pointer;
+    box-shadow:0 5px 20px rgba(0,0,0,.3);
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    transition:.3s;
+}
+.costa{
+    background:url("costa.jpg");
+    background-size:cover;
+    background-position:center;
+}
+
+.sierra{
+    background:url("sierra.jpg");
+    background-size:cover;
+    background-position:center;
+}
+
+.amazonia{
+    background:url("amazonia.jpg");
+    background-size:cover;
+    background-position:center;
+}
+
+.insular{
+    background:url("insular.jpg");
+    background-size:cover;
+    background-position:center;
+}
+
+.card h3{
+    background:rgba(0,0,0,.7);
+    padding:10px;
+    border-radius:10px;
+    margin-bottom:10px;
+}
+
+.card p{
+    background:rgba(0,0,0,.7);
+    padding:10px;
+    border-radius:10px;
+    line-height:1.6;
+}
+
+/* DATOS */
+
+#dato,
+#contador,
+#resultado{
+    background:rgba(0,0,0,.6);
+    padding:20px;
+    border-radius:15px;
+    margin-top:20px;
+    font-size:18px;
+    line-height:1.8;
+    max-width:800px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+#calificacionTexto{
+    background:rgba(0,0,0,.5);
+    padding:15px;
+    border-radius:10px;
+    margin-top:15px;
+    font-size:18px;
+}
+
+/* GALERÍA */
+
+.galeria-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:10px;
+    margin-top:20px;
+}
+
+.foto{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    border-radius:15px;
+    transition:.3s;
+}
+
+.foto:hover{
+    transform:scale(1.05);
+}
+
+/* FORMULARIO */
+
+form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    max-width:500px;
+    margin:auto;
+}
+
+input,
+select,
+textarea{
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    font-size:15px;
+}
+
+textarea{
+    height:120px;
+    resize:none;
+}
+
+/* FOOTER */
+
+footer{
+    background:rgba(15,23,42,.95);
+    padding:20px;
+    text-align:center;
+}
+
+/* MODO OSCURO */
+
+.dark{
+    background:#0f172a;
+    color:white;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    .dashboard{
+        grid-template-columns:1fr;
+    }
+
+    .galeria-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    nav ul{
+        flex-direction:column;
+        align-items:center;
+    }
+}
+
+#quiz .card{
+    max-width:700px;
+    margin:auto;
+}
+
+#opciones{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    margin-top:20px;
+}
+
+#utilidadTexto,
+#recomendarTexto{
+    background:rgba(0,0,0,.5);
+    padding:15px;
+    border-radius:10px;
+    margin-top:10px;
+    max-width:600px;
+    margin-left:auto;
+    margin-right:auto;
+}
