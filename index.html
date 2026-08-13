@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,30 +8,182 @@
 <link rel="stylesheet" href="style.css">
 </head>
 
-<body onload="bienvenida()">
+<body onload="mostrarLogin()">
+
+<!-- ================= LOGIN ================= -->
+<!-- ================= LOGIN Y REGISTRO ================= -->
+
+<section id="login">
+
+    <div class="login-box">
+
+        <h1>🌎 Turismo Ecuador</h1>
+
+        <!-- INICIAR SESIÓN -->
+
+        <div id="formLogin">
+
+            <h2>Iniciar Sesión</h2>
+
+            <p>Ingresa con tu cuenta</p>
+
+            <input
+                type="text"
+                id="usuarioLogin"
+                placeholder="Usuario"
+            >
+
+            <input
+                type="password"
+                id="passwordLogin"
+                placeholder="Contraseña"
+            >
+
+            <button onclick="iniciarSesion()">
+                Ingresar
+            </button>
+
+            <p id="mensajeLogin"></p>
+
+            <p>
+                ¿Es tu primera vez?
+            </p>
+
+            <button onclick="mostrarRegistro()">
+                Registrarse
+            </button>
+
+        </div>
+
+
+        <!-- REGISTRO -->
+
+        <div id="formRegistro" style="display:none;">
+
+            <h2>Crear una cuenta</h2>
+
+            <p>Regístrate para ingresar a Turismo Ecuador</p>
+
+            <input
+                type="text"
+                id="nombreRegistro"
+                placeholder="Nombre"
+            >
+
+            <input
+                type="text"
+                id="usuarioRegistro"
+                placeholder="Crear usuario"
+            >
+
+            <input
+                type="password"
+                id="passwordRegistro"
+                placeholder="Crear contraseña"
+            >
+
+            <input
+                type="password"
+                id="confirmarRegistro"
+                placeholder="Confirmar contraseña"
+            >
+
+            <button onclick="registrarUsuario()">
+                Crear cuenta
+            </button>
+
+            <p id="mensajeRegistro"></p>
+
+            <p>
+                ¿Ya tienes una cuenta?
+            </p>
+
+            <button onclick="mostrarLoginForm()">
+                Iniciar sesión
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PÁGINA PRINCIPAL ================= -->
+
+<div id="pagina" style="display:none;">
 
 <header>
+
     <h1>🌎 Turismo Ecuador</h1>
-    <p>Descubre la riqueza cultural, gastronómica y natural del Ecuador</p>
+
+    <p>
+        Descubre la riqueza cultural, gastronómica y natural del Ecuador
+    </p>
+
 </header>
 
-<nav>
+
+<!-- BOTÓN DEL MENÚ -->
+
+<button id="botonMenu" onclick="mostrarMenu()">
+    ☰ Menú
+</button>
+
+
+<!-- ================= NAVEGACIÓN ================= -->
+
+<nav id="menu">
+
 <ul>
-<li><a href="#inicio">Inicio</a></li>
-<li><a href="#destinos">Regiones</a></li>
-<li><a href="#interactivo">Datos Curiosos</a></li>
-<li><a href="#quiz">Quiz</a></li>
-<li><a href="#recomendador">Destino Ideal</a></li>
-<li><a href="#galeria">Galería</a></li>
-<li><a href="#contacto">Contacto</a></li>
-<li><a href="#calificacion">Calificación</a></li>
+
+<li>
+<a href="#inicio">Inicio</a>
+</li>
+
+<li>
+<a href="#destinos">Regiones</a>
+</li>
+
+<li>
+<a href="#interactivo">Datos Curiosos</a>
+</li>
+
+<li>
+<a href="#quiz">Quiz</a>
+</li>
+
+<li>
+<a href="#recomendador">Destino Ideal</a>
+</li>
+
+<li>
+<a href="#galeria">Galería</a>
+</li>
+
+<li>
+<a href="#contacto">Contacto</a>
+</li>
+
+<li>
+<a href="#calificacion">Calificación</a>
+</li>
+
 </ul>
+
 </nav>
+
 
 <main>
 
+
+<!-- ================= INICIO ================= -->
+
 <section class="hero" id="inicio">
-<h2 id="mensaje">Bienvenido al Turismo del Ecuador</h2>
+
+<h2 id="mensaje">
+Bienvenido al Turismo del Ecuador
+</h2>
 
 <p>
 Explora playas, montañas, selvas y las increíbles Islas Galápagos.
@@ -46,43 +199,77 @@ Modo Oscuro
 
 </section>
 
+
+<!-- ================= REGIONES ================= -->
+
 <section id="destinos">
 
 <h2>Las 4 Regiones del Ecuador</h2>
 
+<p>
+Haz clic sobre una región para conocer más información.
+</p>
+
 <div class="dashboard">
 
+
+<!-- COSTA -->
+
 <div class="card costa" onclick="cambiarCosta()">
+
 <h3>Costa</h3>
+
 <p id="textoCosta">
 Haz clic para conocer más sobre la Costa.
 </p>
+
 </div>
 
+
+<!-- SIERRA -->
+
 <div class="card sierra" onclick="cambiarSierra()">
+
 <h3>Sierra</h3>
+
 <p id="textoSierra">
 Haz clic para conocer más sobre la Sierra.
 </p>
+
 </div>
 
+
+<!-- AMAZONÍA -->
+
 <div class="card amazonia" onclick="cambiarAmazonia()">
+
 <h3>Amazonía</h3>
+
 <p id="textoAmazonia">
 Haz clic para conocer más sobre la Amazonía.
 </p>
+
 </div>
 
+
+<!-- INSULAR -->
+
 <div class="card insular" onclick="cambiarInsular()">
+
 <h3>Insular</h3>
+
 <p id="textoInsular">
 Haz clic para conocer más sobre Galápagos.
 </p>
+
 </div>
 
 </div>
 
 </section>
+
+
+<!-- ================= DATOS CURIOSOS ================= -->
 
 <section id="interactivo">
 
@@ -99,10 +286,13 @@ Mostrar Dato Curioso
 <br><br>
 
 <p id="contador">
-Visitas: 0
+👥 Visitas: 0
 </p>
 
 </section>
+
+
+<!-- ================= QUIZ ================= -->
 
 <section id="quiz">
 
@@ -128,15 +318,20 @@ Comenzar Quiz
 
 </section>
 
+
+<!-- ================= RECOMENDADOR ================= -->
+
 <section id="recomendador">
 
 <h2>¿Qué destino es ideal para ti?</h2>
 
 <select id="preferencia">
+
 <option>Playa</option>
 <option>Montañas</option>
 <option>Selva</option>
 <option>Fauna única</option>
+
 </select>
 
 <button onclick="recomendarRegion()">
@@ -147,24 +342,37 @@ Recomendar Destino
 
 </section>
 
+
+<!-- ================= GALERÍA ================= -->
+
 <section id="galeria">
 
 <h2>Galería del Ecuador</h2>
 
 <div class="galeria-grid">
 
-<img src="galeria1.jpg" class="foto">
-<img src="galeria2.jpg" class="foto">
-<img src="galeria3.jpg" class="foto">
-<img src="galeria4.jpg" class="foto">
-<img src="galeria5.jpg" class="foto">
-<img src="galeria6.jpg" class="foto">
-<img src="galeria7.jpg" class="foto">
-<img src="galeria8.jpg" class="foto">
+<img src="galeria1.jpg" class="foto" alt="Paisaje turístico del Ecuador">
+
+<img src="galeria2.jpg" class="foto" alt="Destino turístico del Ecuador">
+
+<img src="galeria3.jpg" class="foto" alt="Paisaje natural del Ecuador">
+
+<img src="galeria4.jpg" class="foto" alt="Lugar turístico del Ecuador">
+
+<img src="galeria5.jpg" class="foto" alt="Paisaje ecuatoriano">
+
+<img src="galeria6.jpg" class="foto" alt="Destino turístico ecuatoriano">
+
+<img src="galeria7.jpg" class="foto" alt="Naturaleza del Ecuador">
+
+<img src="galeria8.jpg" class="foto" alt="Atractivo turístico del Ecuador">
 
 </div>
 
 </section>
+
+
+<!-- ================= CONTACTO ================= -->
 
 <section id="contacto">
 
@@ -172,19 +380,48 @@ Recomendar Destino
 
 <form onsubmit="return validarFormulario()">
 
-<input type="text" id="nombre" placeholder="Ingrese su nombre">
+<label for="nombre">
+Nombre:
+</label>
 
-<input type="email" placeholder="Ingrese su correo">
+<input
+type="text"
+id="nombre"
+placeholder="Ingrese su nombre"
+>
 
-<select>
+<label for="correo">
+Correo electrónico:
+</label>
+
+<input
+type="email"
+id="correo"
+placeholder="Ingrese su correo"
+>
+
+<label for="region">
+Región:
+</label>
+
+<select id="region">
+
 <option>Seleccione una región</option>
 <option>Costa</option>
 <option>Sierra</option>
 <option>Amazonía</option>
 <option>Insular</option>
+
 </select>
 
-<textarea placeholder="Escriba su mensaje"></textarea>
+<label for="mensajeContacto">
+Mensaje:
+</label>
+
+<textarea
+id="mensajeContacto"
+placeholder="Escriba su mensaje"
+></textarea>
 
 <button type="submit">
 Enviar
@@ -194,11 +431,16 @@ Enviar
 
 </section>
 
+
+<!-- ================= CALIFICACIÓN ================= -->
+
 <section id="calificacion">
 
 <h2>Encuesta de Satisfacción</h2>
 
-<p>¿Qué tan útil te pareció esta página?</p>
+<p>
+¿Qué tan útil te pareció esta página?
+</p>
 
 <button onclick="calificar(1)">⭐</button>
 <button onclick="calificar(2)">⭐⭐</button>
@@ -210,20 +452,37 @@ Enviar
 
 <br>
 
-<h3>¿Encontraste información útil?</h3>
+<h3>
+¿Encontraste información útil?
+</h3>
 
-<button onclick="utilidad('Sí')">Sí</button>
-<button onclick="utilidad('Más o menos')">Más o menos</button>
-<button onclick="utilidad('No')">No</button>
+<button onclick="utilidad('Sí')">
+Sí
+</button>
+
+<button onclick="utilidad('Más o menos')">
+Más o menos
+</button>
+
+<button onclick="utilidad('No')">
+No
+</button>
 
 <p id="utilidadTexto"></p>
 
 <br>
 
-<h3>¿Recomendarías esta página a otras personas?</h3>
+<h3>
+¿Recomendarías esta página a otras personas?
+</h3>
 
-<button onclick="recomendar('Sí')">Sí</button>
-<button onclick="recomendar('No')">No</button>
+<button onclick="recomendar('Sí')">
+Sí
+</button>
+
+<button onclick="recomendar('No')">
+No
+</button>
 
 <p id="recomendarTexto"></p>
 
@@ -231,13 +490,22 @@ Enviar
 
 </main>
 
+
+<!-- ================= FOOTER ================= -->
+
 <footer>
 
-<p>Elaborado por: Santiago Tapuy</p>
+<p>
+Elaborado por: Santiago Tapuy
+</p>
 
-<p>Proyecto de Turismo Ecuador - 2026</p>
+<p>
+Proyecto de Turismo Ecuador - 2026
+</p>
 
 </footer>
+
+</div>
 
 <script src="script.js"></script>
 
