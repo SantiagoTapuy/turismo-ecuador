@@ -25,7 +25,65 @@ body{
     color:white;
 }
 
-/* HEADER */
+
+/* ================= LOGIN ================= */
+
+#login{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+    background:rgba(15,23,42,.75);
+}
+
+.login-box{
+    width:100%;
+    max-width:400px;
+    padding:35px;
+    background:rgba(255,255,255,.15);
+    backdrop-filter:blur(12px);
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.5);
+    text-align:center;
+}
+
+.login-box h1{
+    font-size:32px;
+    margin-bottom:10px;
+}
+
+.login-box h2{
+    font-size:25px;
+    margin-bottom:10px;
+}
+
+.login-box p{
+    margin-bottom:20px;
+}
+
+.login-box input{
+    width:100%;
+    margin:8px 0;
+    padding:14px;
+    border:none;
+    border-radius:10px;
+    font-size:16px;
+}
+
+.login-box button{
+    width:100%;
+    margin-top:15px;
+}
+
+#mensajeLogin{
+    min-height:25px;
+    margin-top:15px;
+    font-weight:bold;
+}
+
+
+/* ================= HEADER ================= */
 
 header{
     background:rgba(37,99,235,0.85);
@@ -38,7 +96,25 @@ header h1{
     margin-bottom:10px;
 }
 
-/* MENU */
+
+/* ================= BOTÓN MENÚ ================= */
+
+#botonMenu{
+    display:block;
+    margin:10px auto;
+    background:var(--color-secundario);
+    font-size:17px;
+    font-weight:bold;
+    position:relative;
+    z-index:101;
+}
+
+#botonMenu:hover{
+    background:#1e293b;
+}
+
+
+/* ================= MENU ================= */
 
 nav{
     background:rgba(15,23,42,0.95);
@@ -67,7 +143,8 @@ nav a:hover{
     color:#facc15;
 }
 
-/* CONTENIDO */
+
+/* ================= CONTENIDO ================= */
 
 main{
     background:rgba(255,255,255,.15);
@@ -87,7 +164,8 @@ h2{
     font-size:32px;
 }
 
-/* BOTONES */
+
+/* ================= BOTONES ================= */
 
 button{
     background:var(--color-principal);
@@ -98,15 +176,16 @@ button{
     cursor:pointer;
     margin:5px;
     font-size:15px;
+    transition:.3s;
 }
 
 button:hover{
     background:#1d4ed8;
     transform:scale(1.05);
-    transition:.3s;
 }
 
-/* REGIONES */
+
+/* ================= REGIONES ================= */
 
 .dashboard{
     display:grid;
@@ -124,12 +203,13 @@ button:hover{
     justify-content:flex-end;
     cursor:pointer;
     box-shadow:0 5px 20px rgba(0,0,0,.3);
+    transition:.3s;
 }
 
 .card:hover{
     transform:translateY(-8px);
-    transition:.3s;
 }
+
 .costa{
     background:url("costa.jpg");
     background-size:cover;
@@ -166,9 +246,12 @@ button:hover{
     padding:10px;
     border-radius:10px;
     line-height:1.6;
+
+    display:none;
 }
 
-/* DATOS */
+
+/* ================= DATOS ================= */
 
 #dato,
 #contador,
@@ -192,7 +275,8 @@ button:hover{
     font-size:18px;
 }
 
-/* GALERÍA */
+
+/* ================= GALERÍA ================= */
 
 .galeria-grid{
     display:grid;
@@ -213,7 +297,8 @@ button:hover{
     transform:scale(1.05);
 }
 
-/* FORMULARIO */
+
+/* ================= FORMULARIO ================= */
 
 form{
     display:flex;
@@ -237,7 +322,8 @@ textarea{
     resize:none;
 }
 
-/* FOOTER */
+
+/* ================= FOOTER ================= */
 
 footer{
     background:rgba(15,23,42,.95);
@@ -245,30 +331,16 @@ footer{
     text-align:center;
 }
 
-/* MODO OSCURO */
+
+/* ================= MODO OSCURO ================= */
 
 .dark{
     background:#0f172a;
     color:white;
 }
 
-/* RESPONSIVE */
 
-@media(max-width:768px){
-
-    .dashboard{
-        grid-template-columns:1fr;
-    }
-
-    .galeria-grid{
-        grid-template-columns:1fr 1fr;
-    }
-
-    nav ul{
-        flex-direction:column;
-        align-items:center;
-    }
-}
+/* ================= QUIZ ================= */
 
 #quiz .card{
     max-width:700px;
@@ -291,4 +363,37 @@ footer{
     max-width:600px;
     margin-left:auto;
     margin-right:auto;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:768px){
+
+    .dashboard{
+        grid-template-columns:1fr;
+    }
+
+    .galeria-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    nav ul{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    header h1{
+        font-size:30px;
+    }
+
+    main{
+        margin:10px;
+        padding:15px;
+    }
+
+    .login-box{
+        padding:25px;
+    }
+
 }
