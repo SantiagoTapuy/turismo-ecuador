@@ -24,7 +24,7 @@ function iniciarSesion() {
     document.getElementById("mensajeLogin");
 
 
-    if(usuario === "admin" && password === "1234") {
+    if(usuario === "santiago" && password === "1234") {
 
         mensaje.innerHTML =
         "✅ Inicio de sesión correcto";
